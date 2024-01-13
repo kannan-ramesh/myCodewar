@@ -13,7 +13,8 @@ public class CombinationStr {
 		System.out.println("Enter String");
 		String str = input.next();
 
-		// findCombination(str);
+		
+		
 		findCom(str, "", 0,arr);
 		System.out.println(arr);
 	}
@@ -29,18 +30,6 @@ public class CombinationStr {
 		findCom(str, s, index + 1,arr);
 	}
 
-	private static void findCombination(String str) {
-		List<String> list = new ArrayList<>();
-		String s = "";
-
-		for (int i = 0; i < str.length(); i++) {
-			for (int j = i; j < str.length(); j++) {
-				s += str.charAt(j);
-				list.add(s);
-			}
-			s = "";
-		}
-		System.out.println(list);
-	}
+	
 
 }
