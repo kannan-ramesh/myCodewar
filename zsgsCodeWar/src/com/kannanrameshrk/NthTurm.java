@@ -21,14 +21,14 @@ public class NthTurm {
 		
 		n1=n1*10+3;
 		arr.add(n1);
-		n2=n2*10+7;
+		n2=n2*10+2;
 		arr.add(n2);
 		
 		int j=0;
 		for(int i=2;i<100;i++) {
 			n1=arr.get(j)*10+3;
 			arr.add(n1);
-			n2=arr.get(j)*10+7;
+			n2=arr.get(j)*10+2;
 			arr.add(n2);
 			j++;
 		}
