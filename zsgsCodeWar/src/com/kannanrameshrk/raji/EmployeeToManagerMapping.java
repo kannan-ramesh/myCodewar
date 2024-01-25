@@ -8,7 +8,7 @@ public class EmployeeToManagerMapping {
 
 	public static void main(String[] args) {
 //		Map managers to employee who reports both directly or inderectly
-
+//		6
 //		A A
 //		B A
 //		C B
@@ -29,7 +29,7 @@ public class EmployeeToManagerMapping {
 			}
 		}
 		graph.print();
-		graph.bfs(3);
+		graph.bfs(2);
 	}
 }
 
