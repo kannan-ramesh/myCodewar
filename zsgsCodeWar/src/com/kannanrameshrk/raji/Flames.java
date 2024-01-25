@@ -20,20 +20,25 @@ public class Flames {
 		for(int i=0;i<s1.length();i++) {
 			for(int j=0;j<s2.length();j++) {
 				if(s1.charAt(i)==s2.charAt(j)) {
-					s1=s1.replaceFirst(""+s1.charAt(i), "");
-					s2=s2.replaceFirst(""+s2.charAt(j), "");
+//					s1=s1.replaceFirst(""+s1.charAt(i), "");
+//					s2=s2.replaceFirst(""+s2.charAt(j), "");
+					 s1 = s1.substring(0, i) + s1.substring(i + 1);
+	                    s2 = s2.substring(0, j) + s2.substring(j + 1);
+	                    i--;
 					break;
 				}
 			}
 		}
 		 
-//		System.out.println(s1);
-//		System.out.println(s2);
+		System.out.println(s1);
+		System.out.println(s2);
 		int len=(s1.length()+s2.length()) % s.length();
-//		System.out.println(s1.length()+s2.length());
-//		System.out.println(len);
+		len = (len < 0) ? len + s.length() : len;
+		System.out.println(s1.length()+s2.length());
+		System.out.println(len);
 		
-		char c=s.charAt(len-1);
+		char c=s.charAt(len);
+		System.out.println(c);
 		switch(c) {
 			case 'F':
 				System.out.println(male+" and "+feMale+" Friends...");
