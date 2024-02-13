@@ -46,8 +46,4 @@ public class Repository {
 	public List<Pnr> getData() {
 		return bookedTickets;
 	}
-
-	public Pnr cancelTickests(int pnrNum) {
-		return bookedTickets.remove(pnrNum);
-	}
 }
