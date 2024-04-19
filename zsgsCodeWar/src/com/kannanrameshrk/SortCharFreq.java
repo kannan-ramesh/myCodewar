@@ -1,6 +1,7 @@
 package com.kannanrameshrk;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,7 @@ public class SortCharFreq {
 		findFreq(str);
 //		 s = "tree"
 //		 Output: "eert"
+		
 	}
 
 	private static void findFreq(String str) {

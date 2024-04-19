@@ -8,7 +8,7 @@ public class SeqDigit {
 
 	public static void main(String[] args) {
 
-		System.out.println(sequentialDigits(1000, 13000));
+		System.out.println(sequentialDigits(1, 13000));
 	}
 
 	public static List<Integer> sequentialDigits(int low, int high) {

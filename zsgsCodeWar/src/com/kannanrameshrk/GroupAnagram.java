@@ -20,6 +20,7 @@ public class GroupAnagram {
 			
 			char[] arr=s.toCharArray();
 			Arrays.sort(arr);
+			
 			String str=new String(arr);
 			
 			if(map.containsKey(str)) {
