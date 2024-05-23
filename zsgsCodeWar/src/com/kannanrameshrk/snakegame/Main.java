@@ -53,7 +53,6 @@ public class Main {
 		System.out.println("Enter Direction:(Top-T,Stright-S,Down-D,Back-B)");
 		char choice=input.next().charAt(0);
 		
-		
 		switch(choice) {
 			case 'T':{
 				checkPlace(arr,foodSpot,startR,startC,choice,point,startR-1,startC,k,input);
@@ -79,17 +78,26 @@ public class Main {
 	}
 
 	private void checkPlace(char[][] arr, int[][] foodSpot, int startR, int startC, char choice, int point, int i, int j, int k, Scanner input) {
-		if((i<0|| i>=arr.length)||(j<0 || j>=arr[0].length) ||foodSpot.length<k ) {
-			System.out.println("Your Score is:"+point);
-			return;
-		}
+		 if ((i < 0 || i >= arr.length) || (j < 0 || j >= arr[0].length)) {
+		        System.out.println("Your Score is:" + point);
+		        return;
+		    }
+		if (k == foodSpot.length) {
+	        System.out.println("No more food available. Your Score is:" + point);
+	        return;
+	    }
+		
 		if(arr[i][j]=='F') {
 			point+=1;
 			arr[i][j]='>';
-			fillFood(foodSpot[++k],arr);
-		}else if(arr[i][j]=='>') {
-			System.out.println("Your Score is:"+point);
+			if (k < foodSpot.length-1) {
+			    fillFood(foodSpot[++k], arr);
+			}
+		}else if(arr[i][j]=='>' || k == foodSpot.length-1) {
+			System.out.println("No more food available. Your Score is:" + point);
 			return;
+		}else {
+			arr[startR][startC]='*';
 		}
 		arr[i][j]='>';
 		printArray(arr);
@@ -115,11 +123,9 @@ public class Main {
 			}
 			System.out.println();
 		}
-		
 	}
 
 	private void fillFoodPosition(int[][] foodSpot, Scanner input, int n) {
-		
 		for(int i=0;i<n;i++) {
 			System.out.println("Enter food: "+(i+1));
 			for(int j=0;j<1;j++) {
@@ -131,5 +137,4 @@ public class Main {
 			System.out.println();
 		}
 	}
-
 }
